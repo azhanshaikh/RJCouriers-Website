@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RJCouriers - Monolithic</title>
+  <style>
+    body {font-family: Arial, sans-serif; margin: 0; background: #f7f9fc;}
+    header {background: #2c3e50; color: white; padding: 1rem; text-align: center;}
+    nav {background: #34495e; padding: 10px; display: flex; justify-content: center; gap: 20px;}
+    nav button {background: #1abc9c; border: none; padding: 10px 20px; color: white; cursor: pointer; border-radius: 5px;}
+    nav button:hover {background: #16a085;}
+    section {padding: 2rem; display: none;}
+    section.active {display: block;}
+    footer {background: #2c3e50; color: white; text-align: center; padding: 1rem; margin-top: 20px;}
+    .card {background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 2px 8px rgba(0,0,0,0.1); max-width: 600px; margin: auto;}
+    input, select {width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px;}
+    button.submit {width: 100%; padding: 12px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;}
+    button.submit:hover {background: #2980b9;}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>RJCouriers - Monolithic System</h1>
+    <p>One stop for all courier operations</p>
+  </header>
+
+  <nav>
+    <button onclick="showSection('home')">Home</button>
+    <button onclick="showSection('book')">Book Parcel</button>
+    <button onclick="showSection('track')">Track Parcel</button>
+    <button onclick="showSection('about')">About Us</button>
+  </nav>
+
+  <section id="home" class="active">
+    <div class="card">
+      <h2>Welcome to RJCouriers</h2>
+      <p>Fast. Reliable. Affordable. We deliver your parcels with care and speed.</p>
+    </div>
+  </section>
+
+  <section id="book">
+    <div class="card">
+      <h2>Book a Parcel</h2>
+      <form>
+        <input type="text" placeholder="Sender Name" required>
+        <input type="text" placeholder="Receiver Name" required>
+        <input type="text" placeholder="Receiver Address" required>
+        <select required>
+          <option value="">Select Package Size</option>
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+        <button type="submit" class="submit">Book Now</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="track">
+    <div class="card">
+      <h2>Track Parcel</h2>
+      <input type="text" placeholder="Enter Tracking ID">
+      <button class="submit" onclick="alert('Tracking info: Out for delivery!')">Track</button>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="card">
+      <h2>About RJCouriers</h2>
+      <p>We are India’s leading courier company with a strong network and years of trusted service.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 RJCouriers | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+  </script>
+</body>
+</html>
